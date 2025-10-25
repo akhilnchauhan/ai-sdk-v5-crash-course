@@ -4,9 +4,9 @@ import { streamText } from 'ai';
 const model = google('gemini-2.0-flash');
 
 const prompt =
-  'Give me the first paragraph of a story about an imaginary planet.';
+  'Give me the first paragraph of a story about an imaginary planet called Earth.';
 
-const stream = TODO; // TODO - stream some text with the model above.
+const stream = streamText({ model, prompt });
 
 for await (const chunk of stream.textStream) {
   process.stdout.write(chunk);
