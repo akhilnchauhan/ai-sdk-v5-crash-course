@@ -12,7 +12,7 @@ import { generateText } from 'ai';
 
 // TODO: Choose a model. I recommend using the Google Gemini model:
 // gemini-2.0-flash
-const model = TODO;
+const model = gemini-2.0-flash;
 ```
 
 We've got a prompt here asking what is the capital of France:
