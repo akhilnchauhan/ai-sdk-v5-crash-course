@@ -8,7 +8,7 @@ const App = () => {
   const { messages, sendMessage } = useChat({});
 
   const [input, setInput] = useState(
-    'Could you describe this image?',
+    'Review the attached image',
   );
   const [selectedFile, setSelectedFile] = useState<File | null>(
     null,
@@ -46,7 +46,18 @@ const App = () => {
           // will be useful!
           sendMessage({
             // NOTE: 'parts' will be useful
-            text: input,
+            role: 'user',
+            parts: [
+              {
+                type: 'text',
+                text: input,
+              },
+              {
+                type: 'file',
+                mediaType: file.type,
+                url: await fileToDataURL(file),
+              },
+            ],
           });
 
           setInput('');
